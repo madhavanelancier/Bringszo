@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        app:layout_collapseMode="pin"
+        app:subtitleTextColor="#1a1a1a"
+        app:titleTextColor="#1a1a1a" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="55dp"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+
+                                <com.facebook.shimmer.ShimmerFrameLayout
+                                    android:id="@+id/category_shimmer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    shimmer:duration="800">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <androidx.gridlayout.widget.GridLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                app:columnCount="4"
+                                                app:columnOrderPreserved="true"
+                                                app:orientation="horizontal"
+                                                app:rowCount="5">
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="1"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="2"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="3"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="1"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="2"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="3"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="2">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="1"
+                                                    app:layout_row="2">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="2"
+                                                    app:layout_row="2">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="3"
+                                                    app:layout_row="2">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="3">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="1"
+                                                    app:layout_row="3">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="2"
+                                                    app:layout_row="3">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="3"
+                                                    app:layout_row="3">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+                                            </androidx.gridlayout.widget.GridLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/category_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <com.elanciers.bringszo.Common.ExpandableHeightGridView
+                                        android:id="@+id/cates"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginRight="16dp"
+                                        android:horizontalSpacing="8dp"
+                                        android:numColumns="3"
+                                        android:stretchMode="columnWidth"
+                                        android:verticalSpacing="8dp" />
+
+                                    <view
+                                        android:id="@+id/view2"
+                                        class="androidx.appcompat.widget.ActionMenuView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@color/background"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+
+</LinearLayout>
+    <!--Ripples contained within the view.
+    android:background="?selectableItemBackground"
+
+    Ripples that extend beyond the view's bounds:
+    android:background="?selectableItemBackgroundBorderless"-->

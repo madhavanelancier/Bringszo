@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MapTrackingActivity"
+    app:behavior_hideable="false"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <FrameLayout
+            android:layout_width="30dp"
+            android:layout_weight="0.5"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/orderlive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@mipmap/orderlive"/>
+
+            <ImageView
+                android:id="@+id/orderdone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@mipmap/orderdone"/>
+
+        </FrameLayout>
+
+        <!--<ImageView
+            android:id="@+id/approvedright"
+            android:layout_width="20dp"
+            android:layout_weight="0.5"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:visibility="invisible"
+            android:src="@mipmap/right"/>-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="match_parent" />
+        <com.elanciers.bringszo.Common.ShimmerTextView
+            android:id="@+id/rec"
+            android:layout_width="0dp"
+            android:layout_weight="9.3"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="#555"
+            android:textSize="16sp"
+            android:text="Order Received"
+            app:reflectionColor="@color/colorAccent"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_height="1dp"
+        android:background="#b9b9b9"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:weightSum="10">
+
+        <FrameLayout
+            android:layout_width="30dp"
+            android:layout_weight="0.5"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/cookinglive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@mipmap/cookinglive"/>
+
+            <ImageView
+                android:id="@+id/cookingdone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@mipmap/cookingdone"/>
+
+        </FrameLayout>
+
+        <!--<ImageView
+            android:id="@+id/packedright"
+            android:layout_width="20dp"
+            android:layout_weight="0.5"
+            android:layout_height="20dp"
+            android:visibility="invisible"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:src="@mipmap/right"/>-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="match_parent" />
+
+        <com.elanciers.bringszo.Common.ShimmerTextView
+            android:id="@+id/pre"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="9.3"
+            android:gravity="center_vertical"
+            android:text="Order in processing"
+            android:textColor="#555"
+            android:textSize="16sp"
+            app:reflectionColor="@color/colorAccent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_height="1dp"
+        android:background="#b9b9b9"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/picklive"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/picklive"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/pickdone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/pickdone"
+                    android:visibility="invisible" />
+
+            </FrameLayout>
+
+            <com.elanciers.bringszo.Common.ShimmerTextView
+                android:id="@+id/pic"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="9.3"
+                android:gravity="center_vertical"
+                android:text="Order Picked Up"
+                android:textColor="#555"
+                android:textSize="16sp"
+            app:reflectionColor="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/deliv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/d_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Feel Free to Call"
+                    android:textColor="#555" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="Open_call"
+                android:padding="8dp"
+                android:src="@drawable/ic_telephone_handle_silhouette" />
+
+        </LinearLayout>
+
+        <!--<ImageView
+            android:id="@+id/pickupright"
+            android:layout_width="20dp"
+            android:layout_weight="0.5"
+            android:layout_height="20dp"
+            android:visibility="invisible"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:src="@mipmap/right"/>-->
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_height="1dp"
+        android:background="#b9b9b9"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:weightSum="10">
+
+        <FrameLayout
+            android:layout_width="30dp"
+            android:layout_weight="0.5"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/deliverylive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@mipmap/deliverylive"/>
+
+            <ImageView
+                android:id="@+id/deliverydone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:src="@mipmap/deliverydone"/>
+
+        </FrameLayout>
+
+        <!--<ImageView
+            android:id="@+id/deliveryright"
+            android:layout_width="20dp"
+            android:layout_weight="0.5"
+            android:layout_height="20dp"
+            android:visibility="invisible"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:src="@mipmap/right"/>-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="match_parent" />
+        <com.elanciers.bringszo.Common.ShimmerTextView
+            android:id="@+id/de"
+            android:layout_width="0dp"
+            android:layout_weight="9.3"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="#555"
+            android:textSize="16sp"
+            android:text="Delivered"
+            app:reflectionColor="@color/colorAccent"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_height="1dp"
+        android:background="#b9b9b9"/>
+
+</LinearLayout>

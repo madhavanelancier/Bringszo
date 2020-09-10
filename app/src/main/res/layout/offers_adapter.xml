@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/vendor_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#11018073"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="16dp">
+
+                    <ImageView
+                        android:id="@+id/restaurantimg"
+                        android:layout_width="95dp"
+                        android:layout_height="85dp"
+                        android:layout_gravity="center_vertical|center"
+                        android:scaleType="centerCrop"
+                        card_view:srcCompat="@mipmap/banner" />
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <TextView
+                    android:id="@+id/restaurantname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:maxLines="1"
+                    android:padding="2dp"
+                    android:singleLine="true"
+                    android:text="Restaurant name"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/textView2"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/restaurantaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:maxLines="2"
+                    android:padding="2dp"
+                    android:singleLine="true"
+                    android:text="8,INDRANAGAR, VELIPATTINAM POST"
+                    android:textColor="#555"
+                    android:textSize="12sp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/textView2"
+                    card_view:layout_constraintTop_toBottomOf="@+id/restaurantname" />
+
+                <TextView
+                    android:id="@+id/restaurantcity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_passage_of_time"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:padding="2dp"
+                    android:singleLine="true"
+                    android:text="15 mins"
+                    android:textAllCaps="true"
+                    android:textColor="#555"
+                    android:textSize="12sp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/textView2"
+                    card_view:layout_constraintTop_toBottomOf="@+id/restaurantaddress" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#111010"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="@+id/restaurantcity"
+                    card_view:layout_constraintTop_toBottomOf="@+id/restaurantcity" />
+
+                <TextView
+                    android:id="@+id/offers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_percentage"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/brandon_text_reg_otf"
+                    android:singleLine="true"
+                    android:text="50% upto RS.100, Min order Rs.50"
+                    android:textColor="#c201c9"
+                    android:textSize="12sp"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="@+id/restaurantcity"
+                    card_view:layout_constraintStart_toStartOf="@+id/restaurantcity"
+                    card_view:layout_constraintTop_toBottomOf="@+id/restaurantcity" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/title_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/subcat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/brandon_text_med_otf"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="title"
+                android:textSize="18sp" />
+
+            <view
+                android:id="@+id/view6"
+                class="androidx.appcompat.widget.ActionMenuView"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/colorAccent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rndimagdp"
+                    card_view:cardCornerRadius="16dp"
+                    card_view:cardElevation="0dp"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent">
+
+                    <!--<androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">-->
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/banner" />
+
+                    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/nm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/brandon_text_reg_otf"
+                        android:singleLine="true"
+                        android:text="TextView"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/brandon_text_med_otf"
+                        android:maxWidth="80dp"
+                        android:singleLine="true"
+                        android:text="₹ 90"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/options"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/product_cat_unselected"
+                        android:drawableEnd="@drawable/down_arrow_spinner"
+                        android:fontFamily="@font/brandon_text_reg_otf"
+                        android:paddingStart="10dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical|end"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/add_background"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:src="@drawable/minus_small" />
+
+                            <TextView
+                                android:id="@+id/qty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/brandon_text_med_otf"
+                                android:gravity="center"
+                                android:minWidth="30dp"
+                                android:text="1"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:src="@drawable/plus_small" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/add"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView25"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/add_background"
+                                android:drawableStart="@drawable/plus_small"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/brandon_text_med_otf"
+                                android:gravity="center"
+                                android:paddingStart="10dp"
+                                android:text="ADD"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/customize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Customizable"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <Spinner
+                     android:id="@+id/option"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="start|center_horizontal"
+                     android:background="@drawable/spinnerstyle"
+                     card_view:layout_constraintBottom_toTopOf="@+id/offername"
+                     card_view:layout_constraintEnd_toEndOf="@+id/price"
+                     card_view:layout_constraintHorizontal_bias="0.0"
+                     card_view:layout_constraintStart_toStartOf="@+id/desc"
+                     card_view:layout_constraintTop_toBottomOf="@+id/price" />
+
+                 <TextView
+                     android:id="@+id/offername"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:layout_marginTop="4dp"
+                     android:layout_marginBottom="8dp"
+                     android:text=""
+                     android:textColor="#000000"
+                     android:textSize="13sp"
+                     android:visibility="gone"
+                     card_view:layout_constraintBottom_toTopOf="@id/view4"
+                     card_view:layout_constraintEnd_toEndOf="@+id/option"
+                     card_view:layout_constraintStart_toStartOf="@+id/option"
+                     card_view:layout_constraintTop_toBottomOf="@+id/option" />
+
+                 <TextView
+                     android:id="@+id/desc"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:padding="2dp"
+                     android:textColor="@android:color/black"
+                     android:textSize="14sp"
+                     android:visibility="visible"
+                     card_view:layout_constraintEnd_toStartOf="@+id/price"
+                     card_view:layout_constraintStart_toStartOf="@+id/nm"
+                     card_view:layout_constraintTop_toBottomOf="@+id/nm" />
+
+                 <TextView
+                     android:id="@+id/price"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:padding="2dp"
+                     android:text="\u20B9 8,999"
+                     android:textColor="#000000"
+                     android:textSize="13sp"
+                     android:textStyle="bold"
+                     android:visibility="visible"
+                     card_view:layout_constraintEnd_toStartOf="@+id/cardView"
+                     card_view:layout_constraintStart_toEndOf="@+id/desc"
+                     card_view:layout_constraintTop_toBottomOf="@+id/nm" />
+
+                 <TextView
+                     android:id="@+id/nm"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="8dp"
+                     android:layout_marginTop="8dp"
+                     android:layout_marginEnd="16dp"
+                     android:layout_marginBottom="8dp"
+                     android:fontFamily="@font/brandon_text_med_otf"
+                     android:maxLines="1"
+                     android:padding="2dp"
+                     android:text="Restaurant name"
+                     android:textColor="#000"
+                     android:textSize="16sp"
+                     card_view:layout_constraintBottom_toTopOf="@+id/price"
+                     card_view:layout_constraintEnd_toStartOf="@+id/cardView"
+                     card_view:layout_constraintStart_toEndOf="@+id/textView2"
+                     card_view:layout_constraintTop_toTopOf="parent" />
+
+                 <View
+                     android:id="@+id/view4"
+                     android:layout_width="0dp"
+                     android:layout_height="0.2dp"
+                     android:layout_marginTop="16dp"
+                     android:layout_marginEnd="16dp"
+                     android:layout_marginBottom="8dp"
+                     android:background="#111010"
+                     android:visibility="gone"
+                     card_view:layout_constraintBottom_toBottomOf="parent"
+                     card_view:layout_constraintEnd_toEndOf="parent"
+                     card_view:layout_constraintStart_toStartOf="@+id/restaurantcity"
+                     card_view:layout_constraintTop_toBottomOf="@+id/offername" />
+
+                 <androidx.cardview.widget.CardView
+                     android:id="@+id/textView2"
+                     android:layout_width="72dp"
+                     android:layout_height="72dp"
+                     android:layout_marginStart="8dp"
+                     android:layout_marginTop="8dp"
+                     android:layout_marginBottom="8dp"
+                     android:background="@drawable/rndimagdp"
+                     card_view:cardCornerRadius="16dp"
+                     card_view:layout_constraintBottom_toBottomOf="parent"
+                     card_view:layout_constraintStart_toStartOf="parent"
+                     card_view:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.constraintlayout.widget.ConstraintLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent">
+
+                         <ImageView
+                             android:id="@+id/image1"
+                             android:layout_width="72dp"
+                             android:layout_height="72dp"
+                             android:layout_gravity="center"
+                             android:layout_marginBottom="8dp"
+                             android:scaleType="fitXY"
+                             android:src="@mipmap/banner"
+                             card_view:layout_constraintBottom_toBottomOf="parent"
+                             card_view:layout_constraintEnd_toEndOf="parent"
+                             card_view:layout_constraintHorizontal_bias="0.6"
+                             card_view:layout_constraintStart_toStartOf="parent"
+                             card_view:layout_constraintTop_toTopOf="parent"
+                             card_view:layout_constraintVertical_bias="0.533" />
+
+                     </androidx.constraintlayout.widget.ConstraintLayout>
+                 </androidx.cardview.widget.CardView>
+
+                 <androidx.cardview.widget.CardView
+                     android:id="@+id/cardView"
+                     android:layout_width="80dp"
+                     android:layout_height="wrap_content"
+                     android:layout_marginEnd="4dp"
+                     card_view:cardCornerRadius="16dp"
+                     card_view:cardElevation="1dp"
+                     card_view:layout_constraintEnd_toEndOf="parent"
+                     card_view:layout_constraintTop_toTopOf="@+id/nm">
+
+                     <FrameLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:background="@drawable/cardround"
+                             android:gravity="center"
+                             android:orientation="horizontal"
+                             android:padding="2dp">
+
+                             <TextView
+                                 android:id="@+id/minus"
+                                 android:layout_width="35dp"
+                                 android:layout_height="30dp"
+                                 android:layout_gravity="center"
+                                 android:layout_marginBottom="2dp"
+                                 android:gravity="center"
+                                 android:text="+"
+                                 android:textColor="@color/colorPrimary"
+                                 android:textSize="25sp"
+                                 android:textStyle="bold" />
+
+                             <TextView
+                                 android:id="@+id/count"
+                                 android:layout_width="0dp"
+                                 android:layout_height="match_parent"
+                                 android:layout_gravity="center"
+                                 android:layout_weight="1"
+                                 android:fontFamily="@font/brandon_bold"
+                                 android:gravity="center"
+                                 android:text="0"
+                                 android:textColor="@android:color/black"
+                                 android:textSize="18sp"
+                                 android:textStyle="bold"
+                                 android:visibility="gone" />
+
+                             <TextView
+                                 android:id="@+id/plus"
+                                 android:layout_width="35dp"
+                                 android:layout_height="30dp"
+                                 android:layout_gravity="center"
+                                 android:layout_marginBottom="2dp"
+                                 android:gravity="center"
+                                 android:text="ADD"
+                                 android:textColor="@color/colorPrimary"
+                                 android:textSize="14sp"
+                                 android:textStyle="bold" />
+
+                             &lt;!&ndash;<ImageView
+                             android:layout_width="35dp"
+                             android:layout_height="35dp"
+                             android:src="@color/blue"
+                             android:textColor="@color/blue"/>&ndash;&gt;
+
+                         </LinearLayout>
+
+                     </FrameLayout>
+
+
+                 </androidx.cardview.widget.CardView>
+             </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

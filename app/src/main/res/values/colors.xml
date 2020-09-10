@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#a30001</color>
+    <color name="colorPrimaryDark">#a30001</color>
+    <color name="colorAccent">#a30001</color>
+    <color name="colorAccent_new">#dfdfdf</color>
+    <color name="white">#fff</color>
+    <color name="statusbar">#28000000</color>
+    <color name="new_sts">#111F3A</color>
+
+    <color name="grayd">#000</color>
+    <color name="textcolor">#767676</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#37000000</color>
+    <color name="dot_dark_screen2">#4162df</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#FFC000</color>
+    <color name="dot_light_screen2">#4162df</color>
+    <color name="background">#34000000</color>
+    <color name="shimmer">#dddddd</color>
+    <color name="divider">#dddddd</color>
+    <color name="green">#00a651</color>
+    <color name="grey">#666666</color>
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/colorAccent</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/colorAccent</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+    </array>
+    <color name="couponstr1">#48A4F4</color>
+    <color name="couponend1">#5BF2CD</color>
+
+    <color name="couponstr2">#D2C3FC</color>
+    <color name="couponend2">#8FC4FC</color>
+
+    <color name="dis1">#90CAF9</color>
+    <color name="dis2">#CE93D8</color>
+    <color name="black">#000</color>
+
+    <array name="grad1">
+        <item>@color/couponstr1</item>
+        <item>@color/couponend1</item>
+    </array>
+
+    <array name="grad2">
+        <item>@color/couponstr2</item>
+        <item>@color/couponend2</item>
+    </array>
+</resources>

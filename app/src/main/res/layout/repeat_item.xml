@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/option_pop_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/commondp"
+                android:paddingTop="20dp"
+                android:paddingEnd="@dimen/commondp"
+                android:paddingBottom="@dimen/commondp">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@mipmap/quantity_contianer" />
+
+                <ImageView
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_cancel" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/commondp"
+                android:layout_marginEnd="@dimen/commondp"
+                android:layout_marginBottom="@dimen/commondp"
+                android:fontFamily="@font/brandon_text_med_otf"
+                android:text="Repeat Customization"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/pronm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/commondp"
+                android:fontFamily="@font/brandon_text_med_otf"
+                android:text="TextView"
+                android:textSize="16sp" />
+
+            <view
+                android:id="@+id/view7"
+                class="androidx.appcompat.widget.ActionMenuView"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="@dimen/commondp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/variant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/commondp"
+                    android:layout_marginEnd="@dimen/commondp"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Variant"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/variant2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/commondp"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Variant"
+                    android:textColor="#555555"
+                    android:textSize="16sp" />
+
+                <!-- <com.elanciers.pova.Common.ExpandableHeightGridView
+                    android:id="@+id/optionslist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />-->
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <view
+            android:id="@+id/view8"
+            class="androidx.appcompat.widget.ActionMenuView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/commondp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/add_address"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="I will choose"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/repeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_address"
+                    android:fontFamily="@font/brandon_text_med_otf"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Repeat"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

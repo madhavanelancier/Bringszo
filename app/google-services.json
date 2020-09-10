@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "183965402154",
+    "firebase_url": "https://bringsodelivery.firebaseio.com",
+    "project_id": "bringsodelivery",
+    "storage_bucket": "bringsodelivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183965402154:android:364d89be97cea11b64ef53",
+        "android_client_info": {
+          "package_name": "com.elanciers.bringszo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183965402154-komfulmkrof28l2l20b3kq0hg04na31c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsZjtEBi8xlmKnHDM1JNO5qbV91L3-Y9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183965402154-komfulmkrof28l2l20b3kq0hg04na31c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183965402154:android:6b42fb0df51945c264ef53",
+        "android_client_info": {
+          "package_name": "com.elanciers.bringszodelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183965402154-komfulmkrof28l2l20b3kq0hg04na31c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsZjtEBi8xlmKnHDM1JNO5qbV91L3-Y9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183965402154-komfulmkrof28l2l20b3kq0hg04na31c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

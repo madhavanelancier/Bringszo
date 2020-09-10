@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/subcat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/brandon_text_med_otf"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="title"
+            android:textSize="18sp" />
+
+        <view
+            android:id="@+id/view6"
+            class="androidx.appcompat.widget.ActionMenuView"
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/colorAccent" />
+    </LinearLayout>
+
+    <com.elanciers.bringszo.Common.ExpandableHeightGridView
+        android:id="@+id/subcatlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

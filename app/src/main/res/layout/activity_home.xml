@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/location_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    shimmer:duration="800">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:adjustViewBounds="true"
+                                    android:background="@color/shimmer"
+                                    android:padding="8dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:background="@color/shimmer" />
+
+                                <View
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:background="@color/shimmer" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@color/shimmer"
+                                android:padding="16dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/location_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:adjustViewBounds="true"
+                                android:padding="8dp"
+                                app:srcCompat="@drawable/ic_pin_loc"
+                                shimmer:ignore="VectorDrawableCompat" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/brandon_text_light"
+                                android:singleLine="true"
+                                android:text="You are here"
+                                android:textColor="#767676"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@drawable/ic_keyboard_arrow_down_24px"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/brandon_text_light"
+                                android:singleLine="true"
+                                android:text="Madurai"
+                                android:textColor="#1a1a1a"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/profile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:src="@drawable/ic_whatsapp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="55dp"
+                        android:orientation="vertical">
+
+                        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                            android:id="@+id/swipeToRefresh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+
+                                    <com.facebook.shimmer.ShimmerFrameLayout
+                                        android:id="@+id/slider_shimmer"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="gone"
+                                        shimmer:duration="800">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical"
+                                                android:paddingStart="16dp"
+                                                android:paddingTop="16dp"
+                                                android:paddingEnd="16dp">
+
+                                                <View
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="180dp"
+                                                    android:background="@color/shimmer"
+                                                    android:clipToPadding="false"
+                                                    android:paddingStart="20dp"
+                                                    android:paddingLeft="20dp"
+                                                    android:paddingEnd="20dp"
+                                                    android:paddingRight="20dp"
+                                                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/slider_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="#39C7C4C4"
+                                        android:orientation="vertical">
+
+                                        <com.elanciers.bringszo.Common.ViewPagerScroll
+                                            android:id="@+id/viewPager"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/white"
+                                            android:clipToPadding="false"
+
+                                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                                        <alirezat775.lib.carouselview.CarouselView
+                                            android:id="@+id/carousel_view"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="180dp"
+                                            android:background="@color/white"
+                                            android:visibility="gone" />
+
+                                        <!--<com.daimajia.slider.library.Indicators.PagerIndicator
+                                                            android:id="@+id/custom_indicator"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_margin="10dp"
+                                                            android:gravity="center"
+                                                            app:selected_color="@color/colorPrimaryDark"
+                                                            app:unselected_color="@color/grey" />-->
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <com.facebook.shimmer.ShimmerFrameLayout
+                                    android:id="@+id/category_shimmer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    shimmer:duration="800">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center"
+                                                android:orientation="horizontal"
+                                                android:padding="16dp">
+
+                                                <View
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="25dp"
+                                                    android:layout_marginEnd="16dp"
+                                                    android:layout_weight="1"
+                                                    android:background="@color/shimmer" />
+
+                                                <View
+                                                    android:layout_width="80dp"
+                                                    android:layout_height="25dp"
+                                                    android:layout_weight="1"
+                                                    android:background="@color/shimmer" />
+
+                                            </LinearLayout>
+
+                                            <androidx.gridlayout.widget.GridLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                app:columnCount="4"
+                                                app:columnOrderPreserved="true"
+                                                app:orientation="horizontal"
+                                                app:rowCount="3">
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="1"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="2"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="3"
+                                                    app:layout_row="0">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="1"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="2"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="3"
+                                                    app:layout_row="1">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:padding="16dp"
+                                                    app:layout_column="0"
+                                                    app:layout_row="2">
+
+                                                    <LinearLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical"
+                                                        android:paddingTop="8dp">
+
+                                                        <View
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="50dp"
+                                                            android:adjustViewBounds="true"
+                                                            android:background="@color/shimmer" />
+                                                    </LinearLayout>
+
+                                                    <View
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="25dp"
+                                                        android:layout_marginStart="3dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginEnd="3dp"
+                                                        android:layout_marginRight="3dp"
+                                                        android:background="@color/shimmer"
+                                                        android:fontFamily="sans-serif-condensed-medium"
+                                                        android:gravity="center"
+                                                        android:maxLines="2"
+                                                        android:singleLine="false"
+                                                        android:text="TextView\n"
+                                                        android:textColor="#525252"
+                                                        android:textSize="12sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                            </androidx.gridlayout.widget.GridLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/category_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:orientation="horizontal"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingStart="@dimen/commondp"
+                                            android:paddingTop="8dp"
+                                            android:paddingBottom="8dp"
+                                            android:text="Shop by Category"
+                                            android:textColor="#1a1a1a"
+                                            android:textSize="18sp"
+                                            android:visibility="visible"
+                                            app:fontFamily="@font/poppins_medium" />
+
+                                        <TextView
+                                            android:id="@+id/catall"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="17dp"
+                                            android:background="?selectableItemBackground"
+                                            android:gravity="right"
+                                            android:padding="8dp"
+                                            android:text="See All"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:visibility="visible" />
+                                    </LinearLayout>
+
+
+
+                                        <com.elanciers.bringszo.Common.ExpandableHeightGridView
+                                            android:id="@+id/cates"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginRight="16dp"
+                                            android:horizontalSpacing="8dp"
+                                            android:numColumns="3"
+                                            android:stretchMode="columnWidth"
+                                            android:verticalSpacing="8dp" />
+
+
+
+
+                                    <view
+                                        android:id="@+id/view2"
+                                        class="androidx.appcompat.widget.ActionMenuView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@color/background"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/category_layouts"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingStart="@dimen/commondp"
+                                            android:paddingTop="8dp"
+                                            android:paddingBottom="8dp"
+                                            android:text="New Arrivals"
+                                            android:textColor="#1a1a1a"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:fontFamily="@font/brandon_text_med_otf" />
+
+                                        <!--  <TextView
+                                            android:id="@+id/catall"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="17dp"
+                                            android:background="?selectableItemBackground"
+                                            android:gravity="right"
+                                            android:padding="8dp"
+                                            android:text="See All"
+                                            android:textColor="@color/colorPrimaryDark" />-->
+                                    </LinearLayout>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/newarr"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp" />
+
+                                    <view
+                                        android:id="@+id/view2s"
+                                        class="androidx.appcompat.widget.ActionMenuView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@color/background"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </ScrollView>
+                        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cartitem_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/teogradient"
+                            android:gravity="center_vertical"
+                            android:onClick="OpenCart"
+                            android:orientation="horizontal"
+                            android:padding="8dp"
+                            android:visibility="visible"
+                            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+                            <com.elanciers.bringszo.Common.CircleImageView
+                                android:id="@+id/shop_img"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@mipmap/banner" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingStart="8dp">
+
+                                <TextView
+                                    android:id="@+id/shop_nm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Departmental Store"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/textView24"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="You have saved items here."
+                                    android:textColor="#555555"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/view_cart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="OpenCart"
+                                android:padding="8dp"
+                                android:text="View"
+                                android:textColor="@color/colorAccent" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/cancel_cart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:src="@drawable/ic_cancel"
+                                app:backgroundTint="@color/white"
+                                app:elevation="2dp"
+                                app:fabCustomSize="30dp"
+                                app:fabSize="mini" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@android:color/transparent"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/tabs"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                app:tabGravity="fill"
+                                app:tabIndicatorHeight="0dp"
+                                app:tabMode="fixed">
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.tabs.TabLayout>
+
+                            <!--<LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/home"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <ImageView
+                                        android:id="@+id/tabImageView1"
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:src="@drawable/ic_home"
+                                        android:tint="@color/background" />
+
+                                    <TextView
+                                        android:id="@+id/tabTextView1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Home"
+                                        android:textColor="@color/background"
+                                        android:textSize="12sp"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/search"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <ImageView
+                                        android:id="@+id/tabImageView2"
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:src="@drawable/ic_search"
+                                        android:tint="@color/background" />
+
+                                    <TextView
+                                        android:id="@+id/tabTextView2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Search"
+                                        android:textColor="@color/background"
+                                        android:textSize="12sp"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+
+                            </LinearLayout>-->
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingBottom="5dp">
+
+                                <com.elanciers.bringszo.Common.CircleImageView
+                                    android:id="@+id/tabImageViews"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    app:civ_border_color="@color/white"
+                                    app:civ_border_width="5dp"
+                                    app:srcCompat="@drawable/ic_rupee"
+                                    shimmer:ignore="VectorDrawableCompat" />
+
+                            </LinearLayout>
+
+                            <!--<LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/oders"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <ImageView
+                                        android:id="@+id/tabImageView3"
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:src="@drawable/ic_shopping_bag"
+                                        android:tint="@color/background" />
+
+                                    <TextView
+                                        android:id="@+id/tabTextView3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Orders"
+                                        android:textColor="@color/background"
+                                        android:textSize="12sp"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/offers"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <ImageView
+                                        android:id="@+id/tabImageView4"
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:src="@drawable/ic_discount"
+                                        android:tint="@color/background" />
+
+                                    <TextView
+                                        android:id="@+id/tabTextView4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Offers"
+                                        android:textColor="@color/background"
+                                        android:textSize="12sp"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+
+                            </LinearLayout>-->
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/tabs2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                app:tabGravity="fill"
+                                app:tabIndicatorHeight="0dp"
+                                app:tabMode="fixed">
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.tabs.TabLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+
+</LinearLayout>
+<!--Ripples contained within the view.
+android:background="?selectableItemBackground"
+
+Ripples that extend beyond the view's bounds:
+android:background="?selectableItemBackgroundBorderless"-->

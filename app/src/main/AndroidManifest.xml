@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.elanciers.bringszo">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GPS_PROVIDER" />
+    <uses-permission android:name="android.permission.NETWORK_PROVIDER" />
+    <uses-permission android:name="android.permission.PASSIVE_PROVIDER" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+
+    <application
+        android:name=".AppClass"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_bringszo_foreground"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_bringszo_foreground"
+        android:supportsRtl="true"
+        android:theme="@style/NoAction"
+        android:usesCleartextTraffic="true"
+        tools:overrideLibrary="com.facebook.shimmer">
+        <activity android:name=".Myrewards_point"></activity>
+        <activity android:name=".Referral_Activity"></activity>
+        <activity android:name=".PlaceOrder" />
+        <activity android:name=".Mpin_Activity" />
+        <activity android:name=".OptionSelect_Activity" />
+        <activity android:name=".CategoriesActivity" />
+        <activity android:name=".OffersActivity" />
+        <activity android:name=".MapTrackingActivity" />
+
+        <service
+            android:name=".RouteService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".ProductSearchActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".MainSearchActivity" />
+        <activity android:name=".ContactUsActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".ManageAddressActivity" />
+        <activity android:name=".CouponActivity" />
+        <activity android:name=".AddressMapActivity"
+         android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".StoresActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".OtpActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".SigninActivity" />
+        <activity android:name=".SignActivity" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".WelcomeScreen" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".Splashscreen"
+            android:theme="@style/NoAction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Termsconditions" />
+
+        <service
+            android:name=".Common.FetchAddressIntentService"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_kZXw62NG7y72u1" />
+
+        <service
+            android:name=".pushnotification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="default_channel_id" />
+        <!--
+<service android:name="com.elancier.domdox.pushnotification.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_bz" />
+    </application>
+
+</manifest>
