@@ -2,11 +2,14 @@ package com.elanciers.bringszo.Adapters
 
 import android.app.Activity
 import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.drawable.ColorDrawable
 import android.util.DisplayMetrics
 import android.view.*
 import android.view.animation.AnimationUtils
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.elanciers.bringszo.Common.Appconstands.ImageDomain
@@ -22,7 +25,15 @@ import com.elanciers.bringszo.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
-class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, public val items: ArrayList<TitledProduct>,val cnm :String,val cid :String, private val listener: OnItemClickListener, private var onBottomReachedListener : OnBottomReachedListener ) : RecyclerView.Adapter<TitledRecyclerAdapter.DataObjectHolder>()
+class TitledRecyclerAdapter(
+    val name: String,
+    public val mActivity: Activity,
+    public val items: ArrayList<TitledProduct>,
+    val cnm: String,
+    val cid: String,
+    private val listener: OnItemClickListener,
+    private var onBottomReachedListener: OnBottomReachedListener
+) : RecyclerView.Adapter<TitledRecyclerAdapter.DataObjectHolder>()
 {
 
     interface OnItemClickListener {
@@ -49,6 +60,7 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         var subcatlist : ExpandableHeightGridView? = null
         var nm : TextView? = null
         var price : TextView? = null
+        var pricestr : TextView? = null
         var qty : TextView? = null
         var option : TextView? = null
         var customize : TextView? = null
@@ -68,6 +80,7 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
 
             nm = itemView.findViewById(R.id.nm) as TextView
             price = itemView.findViewById(R.id.price) as TextView
+            pricestr = itemView.findViewById(R.id.pricestr) as TextView
             qty = itemView.findViewById(R.id.qty) as TextView
             option = itemView.findViewById(R.id.options) as TextView
             customize = itemView.findViewById(R.id.customize) as TextView
@@ -93,9 +106,15 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): DataObjectHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.titled_recycler_adapter, parent, false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): DataObjectHolder {
+        val view = LayoutInflater.from(parent.context).inflate(
+            R.layout.titled_recycler_adapter,
+            parent,
+            false
+        )
 
         return DataObjectHolder(view)
     }
@@ -108,7 +127,7 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
             holder.subcat!!.setText(items[position].title)
            // if(items[position])
         }else{
-            if (items[position].title==items[position-1].title){
+            if (items[position].title==items[position - 1].title){
                 holder.title_lay!!.visibility = View.GONE
                 holder.subcat!!.setText(items[position].title)
             }else {
@@ -121,11 +140,11 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         if (items[position].options!!.isNotEmpty()) {
             val sp = items[position].selpos!!
             val qty = db.qty(items[position].pid.toString())//,items[position].options!![sp].id.toString()
-            println("qty : "+qty)
+            println("qty : " + qty)
             items[position].qty = qty
             holder.option!!.visibility= View.VISIBLE
             holder.option!!.setText(items[position].options!![0].name)
-            println("items[position].options!!.size : "+items[position].options!!.size)
+            println("items[position].options!!.size : " + items[position].options!!.size)
             if (items[position].options!![0].name==""){
                 holder.option!!.visibility= View.INVISIBLE
             }else{
@@ -141,14 +160,21 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         }
 
         if (!items[position].img.isNullOrEmpty()){
-            Glide.with(mActivity).load(ImageDomain+items[position].img).error(R.mipmap.ic_bringszo_logo).into(holder.image1!!)
+            Glide.with(mActivity).load(ImageDomain + items[position].img).error(R.mipmap.ic_bringszo_logo).into(
+                holder.image1!!
+            )
         }
         //SetText
         holder.nm!!.setText(items[position].name)
         holder.qty!!.setText(items[position].qty)
-        holder.price!!.setText("₹ "+items[position].options!![0].price)
+        holder.price!!.setText("₹ " + items[position].options!![0].price)
+        if(!items[position].options!![0].prices!!.isNullOrEmpty()) {
+            holder.pricestr!!.setText("₹ " + items[position].options!![0].prices)
+            holder.pricestr!!.visibility=View.VISIBLE
+            holder.pricestr!!.setPaintFlags(holder.pricestr!!.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+        }
         val varient = db.varients(items[position].pid.toString())
-        println("varient : "+varient)
+        println("varient : " + varient)
         if (!varient.isNullOrEmpty()) {
             if (varient!="0") {
                 holder!!.customize!!.setText(varient + " Varients added")
@@ -167,10 +193,13 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         //Add
         holder.add!!.setOnClickListener {
            // if (db.vendor_id.isNullOrEmpty()||db.vendor_id==utils.getvendor_id()) {
-                println("db.vendor_id : "+db.vendor_id)
-                println("utils.getvendor_id() : "+utils.getvendor_id())
+                println("db.vendor_id : " + db.vendor_id)
+                println("utils.getvendor_id() : " + utils.getvendor_id())
                 val sp = items[position].selpos!!
-                val qty = db.optqty(items[position].pid.toString(),items[position].options!![sp].id.toString())
+                val qty = db.optqty(
+                    items[position].pid.toString(),
+                    items[position].options!![sp].id.toString()
+                )
                 val cart = CartProduct()
                 cart.vendor_id = utils.getvendor_id()
                 cart.vendor_nm = utils.getvendor_nm()
@@ -210,7 +239,10 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
                     println("db.vendor_id : " + db.vendor_id)
                     println("utils.getvendor_id() : " + utils.getvendor_id())
                     val sp = items[position].selpos!!
-                    val qty = db.optqty(items[position].pid.toString(), items[position].options!![sp].id.toString())
+                    val qty = db.optqty(
+                        items[position].pid.toString(),
+                        items[position].options!![sp].id.toString()
+                    )
                     val cart = CartProduct()
                     cart.vendor_id = utils.getvendor_id()
                     cart.vendor_nm = utils.getvendor_nm()
@@ -258,7 +290,10 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
                         println("db.vendor_id : " + db.vendor_id)
                         println("utils.getvendor_id() : " + utils.getvendor_id())
                         val sp = items[position].selpos!!
-                        val qty = db.optqty(items[position].pid.toString(), items[position].options!![sp].id.toString())
+                        val qty = db.optqty(
+                            items[position].pid.toString(),
+                            items[position].options!![sp].id.toString()
+                        )
                         val cart = CartProduct()
                         cart.vendor_id = utils.getvendor_id()
                         cart.vendor_nm = utils.getvendor_nm()
@@ -302,7 +337,7 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
 
     }
 
-    fun RepeatPop(items : TitledProduct){
+    fun RepeatPop(items: TitledProduct){
         val db = DBController(mActivity)
         val utils = Utils(mActivity)
         val openwith = BottomSheetDialog(mActivity)
@@ -324,7 +359,7 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         val price = cart1.price
         val qty = cart1.qty
         variant.setText(cart1.opnm)
-        variant2.setText(rupees+cart1.price)
+        variant2.setText(rupees + cart1.price)
         val animMoveToTop = AnimationUtils.loadAnimation(mActivity, R.anim.bottom_top)
         popUpView.animation =animMoveToTop
         cancel.setOnClickListener {
@@ -333,8 +368,8 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         repeat.setOnClickListener {
             items.price = price
             items.selpos = opid.toString().toInt()
-            println("db.vendor_id : "+db.vendor_id)
-            println("utils.getvendor_id() : "+utils.getvendor_id())
+            println("db.vendor_id : " + db.vendor_id)
+            println("utils.getvendor_id() : " + utils.getvendor_id())
             //val sp = opid.toString().toInt()
             //val qty = db.optqty(items.pid.toString(),opid.toString())
             val cart = CartProduct()
@@ -374,17 +409,21 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         openwith.setCancelable(true)
         openwith.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         openwith.window!!.setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+        );
         openwith.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         val displaymetrics = DisplayMetrics();
         mActivity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         val width =  (displaymetrics.widthPixels * 1);
         val height =  (displaymetrics.heightPixels * 1);
-        openwith.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        openwith.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        );
         openwith.show()
     }
 
-    fun OptionPop(items:TitledProduct){
+    fun OptionPop(items: TitledProduct){
         val db = DBController(mActivity)
         val utils = Utils(mActivity)
         var selpos = items.selpos!!
@@ -415,17 +454,22 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         val optionslist = popUpView.findViewById(R.id.optionslist) as RecyclerView
         //optionslist.isExpanded=true
         selected.setText(items.options!![selpos].name)
-        itmtot.setText(rupees +items.options!![selpos].price)
-        optionslist.adapter=OptionsRecyclerAdapter(mActivity,items.options!!,object : OptionsRecyclerAdapter.OnItemClickListener {
-            override fun OnItemClick(view: View, pos: Int, viewType: Int, lastpos : Int) {
-                selpos=pos
-                println("option clicked name : "+items.options!![selpos].name)
-                println("option clicked price : "+items.options!![selpos].price)
-                selected.setText(items.options!![selpos].name)
-                itmtot.setText(rupees +items.options!![selpos].price)
-            }
+        itmtot.setText(rupees + items.options!![selpos].price)
+        optionslist.adapter=OptionsRecyclerAdapter(
+            mActivity,
+            items.options!!,
+            object : OptionsRecyclerAdapter.OnItemClickListener {
+                override fun OnItemClick(view: View, pos: Int, viewType: Int, lastpos: Int) {
+                    selpos = pos
+                    println("option clicked name : " + items.options!![selpos].name)
+                    println("option clicked price : " + items.options!![selpos].price)
+                    selected.setText(items.options!![selpos].name)
+                    itmtot.setText(rupees + items.options!![selpos].price)
+                }
 
-        },selpos)
+            },
+            selpos
+        )
         //optionslist.adapter=OptionsAdapter(context,R.layout.optioslist_adapter,items.options!!)
         //val animMoveToTop = AnimationUtils.loadAnimation(mActivity, R.anim.bottom_top)
         /*animMoveToTop.setAnimationListener(object : Animation.AnimationListener {
@@ -445,10 +489,10 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
             if (db.vendor_id.isNullOrEmpty()||db.vendor_id==utils.getvendor_id()) {
                 items.price = items.options!![selpos].price
                 items.selpos = selpos
-                println("db.vendor_id : "+db.vendor_id)
-                println("utils.getvendor_id() : "+utils.getvendor_id())
+                println("db.vendor_id : " + db.vendor_id)
+                println("utils.getvendor_id() : " + utils.getvendor_id())
                 val sp = selpos
-                val qty = db.optqty(items.pid.toString(),items.options!![sp].id.toString())
+                val qty = db.optqty(items.pid.toString(), items.options!![sp].id.toString())
                 val cart = CartProduct()
                 cart.vendor_id = utils.getvendor_id()
                 cart.vendor_nm = utils.getvendor_nm()
@@ -476,8 +520,8 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
                 }
                 notifyDataSetChanged()
             }else{
-                println("db.vendor_id : "+db.vendor_id)
-                println("utils.getvendor_id() : "+utils.getvendor_id())
+                println("db.vendor_id : " + db.vendor_id)
+                println("utils.getvendor_id() : " + utils.getvendor_id())
             }
             //notifyDataSetChanged()
         }
@@ -486,13 +530,17 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         openwith.setCancelable(true)
         openwith.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         openwith.window!!.setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+        );
         openwith.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         val displaymetrics = DisplayMetrics();
         mActivity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         val width =  (displaymetrics.widthPixels * 1);
         val height =  (displaymetrics.heightPixels * 1);
-        openwith.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        openwith.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        );
         openwith.show()
     }
 
@@ -512,7 +560,7 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         val cart1 = db.LastItm(items.pid.toString())
         pronm.setText("You have multiple customizations for ${cart1.pnm}. Choose which one to remove.")
         val cartlist = db.CartList()
-        val adp = ProductAdapter(mActivity,R.layout.remove_ite_adapter,cartlist)
+        val adp = ProductAdapter(mActivity, R.layout.remove_ite_adapter, cartlist)
         optionslist.adapter=adp
         optionslist.isExpanded=true
 
@@ -525,13 +573,17 @@ class TitledRecyclerAdapter(val name: String,public val mActivity: Activity, pub
         openwith.setCancelable(true)
         openwith.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         openwith.window!!.setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+        );
         openwith.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         val displaymetrics = DisplayMetrics();
         mActivity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         val width =  (displaymetrics.widthPixels * 1);
         val height =  (displaymetrics.heightPixels * 1);
-        openwith.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        openwith.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        );
         openwith.show()
     }
 

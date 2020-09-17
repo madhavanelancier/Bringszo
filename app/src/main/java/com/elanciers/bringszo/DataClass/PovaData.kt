@@ -114,6 +114,9 @@ class PovaData {
     @SerializedName("price")
     @Expose
     var price: String? = null
+    @SerializedName("vendor_price")
+    @Expose
+    var vendor_price: String? = null
     @SerializedName("sid")
     @Expose
     var sid: String? = null

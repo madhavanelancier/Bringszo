@@ -547,6 +547,7 @@ class OptionSelect_Activity : AppCompatActivity() {
 
 
                         Handler().postDelayed(Runnable {
+                            val time:Long
                             if (utils.login()) {
                                 startActivity(Intent(activity, HomeActivity::class.java))
                                 finish()
@@ -566,7 +567,7 @@ class OptionSelect_Activity : AppCompatActivity() {
 
                         Handler().postDelayed(Runnable {
                             finish()
-                        },2000)
+                        },5000)
 
                     }
                 }

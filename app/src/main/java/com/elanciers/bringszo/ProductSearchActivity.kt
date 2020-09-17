@@ -167,10 +167,12 @@ class ProductSearchActivity : AppCompatActivity(),TitledRecyclerAdapter.OnItemCl
                                     for (o in 0 until option!!.size){
                                         val sdata = SpinnerPojo()
                                         val price = option[o].price
+                                        val prices = option[o].vendor_price
                                         val opname = option[o].name
                                         sdata.id = o.toString()
                                         sdata.name = opname
                                         sdata.price = price
+                                        sdata.prices = prices
                                         options.add(sdata)
                                     }
                                     val dts = TitledProduct()
@@ -261,10 +263,12 @@ class ProductSearchActivity : AppCompatActivity(),TitledRecyclerAdapter.OnItemCl
                                     for (o in 0 until option!!.size){
                                         val sdata = SpinnerPojo()
                                         val price = option[o].price
+                                        val prices = option[o].vendor_price
                                         val opname = option[o].name
                                         sdata.id = o.toString()
                                         sdata.name = opname
                                         sdata.price = price
+                                        sdata.prices = prices
                                         options.add(sdata)
                                     }
                                     val dts = TitledProduct()

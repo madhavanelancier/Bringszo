@@ -114,6 +114,7 @@
                         android:id="@+id/price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:fontFamily="@font/brandon_text_med_otf"
                         android:maxWidth="80dp"
                         android:singleLine="true"

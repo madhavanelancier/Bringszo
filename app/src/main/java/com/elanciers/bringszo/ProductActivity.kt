@@ -530,12 +530,15 @@ class ProductActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedListene
                                     val option = pro[p].option
                                     val options = ArrayList<SpinnerPojo>()
                                     for (o in 0 until option!!.size){
+                                        println("strike_price"+option[o].vendor_price)
                                         val sdata = SpinnerPojo()
                                         val price = option[o].price
+                                        val prices = option[o].vendor_price
                                         val opname = option[o].name
                                         sdata.id = o.toString()
                                         sdata.name = opname
                                         sdata.price = price
+                                        sdata.prices = prices
                                         options.add(sdata)
                                     }
                                     val dts = TitledProduct()
