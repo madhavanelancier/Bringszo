@@ -96,7 +96,7 @@ class CategoriesActivity : AppCompatActivity() {
         category_layout.visibility = View.GONE
         category_shimmer.visibility = View.VISIBLE
         category_shimmer.startShimmerAnimation()
-        val call = ApproveUtils.Get.getCategory("1")
+        val call = ApproveUtils.Get.getCategory("1",utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())

@@ -20,15 +20,18 @@ interface usr {
 
     @FormUrlEncoded
     @POST("customers/home_slider")
-    fun getSlider(@Field("api")api : String): Call<Resp>
+    fun getSlider(@Field("api")api : String,
+                  @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("appPopup")
-    fun getpop(@Field("api")api : String): Call<Respval>
+    fun getpop(@Field("api")api : String,
+               @Field("zone")zone : String): Call<Respval>
 
     @FormUrlEncoded
     @POST("customers/category")
-    fun getCategory(@Field("api")api : String): Call<Resp>
+    fun getCategory(@Field("api")api : String,
+                    @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("product")
@@ -44,7 +47,8 @@ interface usr {
                    @Field("lat")lat : String,
                    @Field("lng")lng : String,
                    @Field("city")city : String,
-                   @Field("reg_id")reg_id : String): Call<Resp>
+                   @Field("reg_id")reg_id : String,
+                   @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("editAddress/1")
@@ -57,7 +61,8 @@ interface usr {
                    @Field("lng")lng : String,
                    @Field("reg_id")reg_id : String,
                    @Field("city")city : String,
-                   @Field("id")id : String): Call<Resp>
+                   @Field("id")id : String,
+                    @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("deleteAddress/1")
@@ -88,7 +93,8 @@ interface usr {
 
     @FormUrlEncoded
     @POST("delivery_charge")
-    fun getDeliverycharge(@Field("amount")uid : String): Call<Resp>
+    fun getDeliverycharge(@Field("amount")uid : String,
+                          @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("customers/vendors/1")
@@ -113,7 +119,8 @@ interface usr {
     @FormUrlEncoded
     @POST("category")
     fun getProducts(@Field("type")type : String,
-                   @Field("vendor_id")vendor_id : String): Call<Resp>
+                   @Field("vendor_id")vendor_id : String,
+                    @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("customers/mpinFetch")
@@ -128,7 +135,8 @@ interface usr {
     @POST("category")
     fun getSearchProducts(@Field("vendor_id")vendor_id : String,
                    @Field("search")search : String,
-                   @Field("start")start : String): Call<Resp>
+                   @Field("start")start : String,
+                          @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("productSearch")
@@ -140,11 +148,13 @@ interface usr {
     @POST("customers/store")
     fun Login(@Field("api")api : String,
                  @Field("mobile")mobile : String,
-                 @Field("token")token : String): Call<Resp>
+                 @Field("token")token : String,
+              @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("sponsorCheck")
-    fun spons(@Field("mobile")api : String): Call<Respval>
+    fun spons(@Field("mobile")api : String,
+              @Field("zone")zone : String): Call<Respval>
 
     @FormUrlEncoded
     @POST("customers/register")
@@ -153,14 +163,16 @@ interface usr {
                  @Field("mobile")mobile : String,
                  @Field("email")email : String,
                  @Field("sponsor")sponsor : String,
-                 @Field("token")token : String): Call<Resp>
+                 @Field("token")token : String,
+                 @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("profile_update")
     fun profile_update(@Field("uid")uid : String,
                  @Field("name")name : String,
                  @Field("mobile")mobile : String,
-                 @Field("email")email : String): Call<Resp>
+                 @Field("email")email : String,
+                 @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("customers/otp_check")
@@ -168,7 +180,8 @@ interface usr {
                  @Field("mobile")mobile : String,
                  @Field("res_otp")res_otp : String,
                  @Field("enter_otp")enter_otp : String,
-                 @Field("type")type : String): Call<Resp>
+                 @Field("type")type : String,
+            @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("customers/otp_check")
@@ -183,26 +196,31 @@ interface usr {
     @FormUrlEncoded
     @POST("order_details")
     fun Orders(@Field("id")id : String,
-               @Field("start")start : String): Call<Resp>
+               @Field("start")start : String,
+               @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("product")
-    fun Product(@Field("id")id : String): Call<Resp>
+    fun Product(@Field("id")id : String,
+                @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("single_order")
-    fun getsts(@Field("id")id : String): Call<Resp>
+    fun getsts(@Field("id")id : String,
+               @Field("zone")zone : String): Call<Resp>
 
     @POST("version")
     fun Version(): Call<Resp>
 
     @FormUrlEncoded
     @POST("coupon")
-    fun Coupon(@Field("id")id : String): Call<Resp>
+    fun Coupon(@Field("id")id : String,
+               @Field("zone")zone : String): Call<Resp>
 
     @FormUrlEncoded
     @POST("coupon_check")
-    fun Coupon_check(@Field("code")code : String): Call<Resp>
+    fun Coupon_check(@Field("code")code : String,
+                     @Field("zone")zone : String): Call<Resp>
 
     //{"staff_id":"17","centre_id":"1","reason":"Reason"}
 

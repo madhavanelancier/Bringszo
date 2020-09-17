@@ -63,6 +63,7 @@ class Myrewards_point : AppCompatActivity() {
             try {
                 val jobj = JSONObject()
                 jobj.put("uid",utils!!.mobile())
+                jobj.put("zone",utils!!.zoneid())
                 Log.i(
                     "check Input",
                     Appconstands.userReward + "    " + jobj.toString()

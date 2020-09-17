@@ -1169,7 +1169,8 @@ class AddressMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleApiCli
                 data.adrs_latitude.toString(),
                 data.adrs_longtitude.toString(),
                 data.city.toString(),
-                utils.userid().toString())
+                utils.userid().toString(),
+                utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())
@@ -1243,7 +1244,8 @@ class AddressMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleApiCli
                 data.adrs_longtitude.toString(),
                 utils.userid().toString(),
                 data.city.toString(),
-                data.adrs_id.toString())
+                data.adrs_id.toString(),
+                utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())

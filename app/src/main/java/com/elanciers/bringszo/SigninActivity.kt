@@ -74,7 +74,7 @@ class SigninActivity : AppCompatActivity() {
                 //val msg = getString(R.string.msg_token_fmt, token)
                 Log.d(tag, token)
                 //Toast.makeText(activity, token, Toast.LENGTH_SHORT).show()
-                val call = ApproveUtils.Get.Login("1",mobile,token!!)
+                val call = ApproveUtils.Get.Login("1",mobile,token!!,utils.zoneid())
                 call.enqueue(object : Callback<Resp> {
                     override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                         Log.e("$tag response", response.toString())

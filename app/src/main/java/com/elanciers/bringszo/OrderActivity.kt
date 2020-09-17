@@ -157,7 +157,7 @@ class OrderActivity : AppCompatActivity(),OrderListAdapter.OnItemClickListener,O
             pDialog= Dialog(activity)
             Appconstands.loading_show(activity, pDialog).show()
         }
-        val call = ApproveUtils.Get.Orders(utils.userid(),start.toString())
+        val call = ApproveUtils.Get.Orders(utils.userid(),start.toString(),utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())

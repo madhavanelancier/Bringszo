@@ -138,7 +138,7 @@ class ProductSearchActivity : AppCompatActivity(),TitledRecyclerAdapter.OnItemCl
             product_shimmer.visibility = View.VISIBLE
             product_shimmer.startShimmerAnimation()
         }
-        val call = ApproveUtils.Get.getSearchProducts(vendor_id.toString(),src,start.toString())
+        val call = ApproveUtils.Get.getSearchProducts(vendor_id.toString(),src,start.toString(),utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())
@@ -232,7 +232,7 @@ class ProductSearchActivity : AppCompatActivity(),TitledRecyclerAdapter.OnItemCl
             product_shimmer.visibility = View.VISIBLE
             product_shimmer.startShimmerAnimation()
         }
-        val call = ApproveUtils.Get.getSearchProducts("",src,start.toString())
+        val call = ApproveUtils.Get.getSearchProducts("",src,start.toString(),utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())

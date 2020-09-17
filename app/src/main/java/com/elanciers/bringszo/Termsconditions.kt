@@ -27,6 +27,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.elanciers.bringszo.Common.Appconstands
 import com.elanciers.bringszo.Common.Connection
+import com.elanciers.bringszo.Common.Utils
 
 import kotlinx.android.synthetic.main.activity_termsconditions.*
 import org.json.JSONArray
@@ -58,6 +59,7 @@ class Termsconditions : AppCompatActivity() {
     var cloud_name=""
     var api_key=""
     var api_secret=""
+    lateinit var utils: Utils
     private val STROKE_WIDTH = 5f
     private val HALF_STROKE_WIDTH = STROKE_WIDTH / 2
     internal var DIRECTORY = Environment.getExternalStorageDirectory().path + "/Signature/"
@@ -73,6 +75,7 @@ class Termsconditions : AppCompatActivity() {
       ///  utils = Utils(this)
        //actionBar.setTitle("Terms and conditions")
 
+        var utils=Utils(this)
         imageButton.setOnClickListener {
             finish()
         }
@@ -129,6 +132,7 @@ class Termsconditions : AppCompatActivity() {
             try {
                 val jobj = JSONObject()
                 jobj.put("uname", "id")
+                jobj.put("zone", utils.zoneid())
 
                 Log.i(
                     "check Input",

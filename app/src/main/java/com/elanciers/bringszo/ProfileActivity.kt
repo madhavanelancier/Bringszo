@@ -267,7 +267,7 @@ class ProfileActivity : AppCompatActivity() {
                     if (isValidEmail(email)){
                         pDialog = Dialog(activity)
                         Appconstands.loading_show(activity, pDialog).show()
-                        val call = ApproveUtils.Get.profile_update(utils.userid(),name.text.toString().trim(),mobile.text.toString().trim(),email.text.toString().trim())
+                        val call = ApproveUtils.Get.profile_update(utils.userid(),name.text.toString().trim(),mobile.text.toString().trim(),email.text.toString().trim(),utils.zoneid())
                         call.enqueue(object : Callback<Resp> {
                             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                                 Log.e("$tag response", response.toString())
@@ -321,7 +321,7 @@ class ProfileActivity : AppCompatActivity() {
                 }else{
                     pDialog = Dialog(activity)
                     Appconstands.loading_show(activity, pDialog).show()
-                    val call = ApproveUtils.Get.profile_update(utils.userid(),name.text.toString().trim(),mobile.text.toString().trim(),email.text.toString().trim())
+                    val call = ApproveUtils.Get.profile_update(utils.userid(),name.text.toString().trim(),mobile.text.toString().trim(),email.text.toString().trim(),utils.zoneid())
                     call.enqueue(object : Callback<Resp> {
                         override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                             Log.e("$tag response", response.toString())

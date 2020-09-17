@@ -119,7 +119,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     fun sponsor(src:String){
-        val call = ApproveUtils.Get.spons(src)
+        val call = ApproveUtils.Get.spons(src,utils.zoneid())
         call.enqueue(object : Callback<Respval> {
             override fun onResponse(call: Call<Respval>, response: Response<Respval>) {
                 Log.e("$tag response", response.toString())
@@ -204,7 +204,7 @@ class SignupActivity : AppCompatActivity() {
                 Log.d(tag, token)
                 //Toast.makeText(activity, token, Toast.LENGTH_SHORT).show()
 
-                val call = ApproveUtils.Get.Register("1",name,mobile,email,referal.text.toString().trim(),token!!)
+                val call = ApproveUtils.Get.Register("1",name,mobile,email,referal.text.toString().trim(),token!!,utils.zoneid().toString())
                 call.enqueue(object : Callback<Resp> {
                     override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                         Log.e("$tag response", response.toString())

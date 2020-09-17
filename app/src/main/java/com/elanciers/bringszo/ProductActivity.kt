@@ -502,7 +502,7 @@ class ProductActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedListene
         //loading_show(activity, pDialog).show()
         println("type : "+typeid)
         println("vendor_id : "+vendor_id)
-        val call = ApproveUtils.Get.getProducts(typeid.toString(),vendor_id.toString())
+        val call = ApproveUtils.Get.getProducts(typeid.toString(),vendor_id.toString(),utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())

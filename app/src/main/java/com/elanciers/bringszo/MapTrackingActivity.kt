@@ -28,6 +28,7 @@ import com.elanciers.bringszo.Common.Appconstands.rupees
 import com.elanciers.bringszo.Common.DBController
 import com.elanciers.bringszo.Common.GpsUtils
 import com.elanciers.bringszo.Common.Shimmer
+import com.elanciers.bringszo.Common.Utils
 import com.elanciers.bringszo.DataClass.LocationObject
 import com.elanciers.bringszo.DataClass.OrderDetail
 import com.elanciers.bringszo.retrofit.ApproveUtils
@@ -68,7 +69,7 @@ class MapTrackingActivity : AppCompatActivity(), OnMapReadyCallback,
     var user_lng=""
     var order_status=""
     var d_mobile=""
-
+    lateinit var utils: Utils
     var current_lat = 0.0
     var current_lng = 0.0
     private var mGoogleApiClient: GoogleApiClient? = null
@@ -206,6 +207,7 @@ class MapTrackingActivity : AppCompatActivity(), OnMapReadyCallback,
         ab.setHomeAsUpIndicator(R.drawable.ic_arrow_back_ios_24px)
         orderid = intent.extras.getString("orderid")
         ab!!.title = "ORDER #$orderid"
+        utils= Utils(this)
         if (mGoogleApiClient == null) {
             mGoogleApiClient = GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -458,7 +460,7 @@ class MapTrackingActivity : AppCompatActivity(), OnMapReadyCallback,
         pDialo.show()*/
         //pDialog = Dialog(activity)
         //Appconstands.loading_show(activity, pDialog).show()
-        val call = ApproveUtils.Get.getsts(sid)
+        val call = ApproveUtils.Get.getsts(sid,utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())

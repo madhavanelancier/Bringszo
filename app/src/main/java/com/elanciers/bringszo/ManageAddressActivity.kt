@@ -153,7 +153,7 @@ class ManageAddressActivity : AppCompatActivity(),ManageAddressAdapter.OnBottomR
         db.dropAddress()
         adrs.clear()
         //Appconstands.loading_show(activity, pDialog).show()
-        val call = ApproveUtils.Get.Otp("1",utils.mobile().toString(),"123","123","")
+        val call = ApproveUtils.Get.Otp("1",utils.mobile().toString(),"123","123","",utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())

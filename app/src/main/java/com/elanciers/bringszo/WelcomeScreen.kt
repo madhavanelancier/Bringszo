@@ -53,7 +53,7 @@ class WelcomeScreen : AppCompatActivity() {
             }
         }, 5000)*/
 
-        layouts = intArrayOf(R.layout.slide1,R.layout.slide2, R.layout.slide3)
+        layouts = intArrayOf(R.layout.slide1,R.layout.slide3)
 
         // adding bottom dots
         //addBottomDots(0)
@@ -173,7 +173,7 @@ class WelcomeScreen : AppCompatActivity() {
     private fun launchHomeScreen() {
         // prefManager.setFirstTimeLaunch(false);
         //utils.savePreferences("first_time", "No")
-        startActivity(Intent(this, SignActivity::class.java))
+        startActivity(Intent(this, OptionSelect_Activity::class.java))
         finish()
     }
 }

@@ -23,6 +23,7 @@ import androidx.core.content.ContextCompat
 import com.elanciers.bringszo.Common.Appconstands
 import com.elanciers.bringszo.Common.Connection
 import com.elanciers.bringszo.Common.GpsUtils
+import com.elanciers.bringszo.Common.Utils
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_option_select_.*
 import org.json.JSONArray
@@ -39,7 +40,8 @@ class OptionSelect_Activity : AppCompatActivity() {
     val cityarr=ArrayList<String>()
     var latistr=""
     var longstr=""
-
+    var zoneid=""
+    lateinit var utils: Utils
     fun getLocation() {
         try {
             println("locat")
@@ -109,7 +111,7 @@ class OptionSelect_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_option_select_)
         mContext=this
-
+        utils=Utils(this)
        /* pinarr.add("Select Your Pincode")
         pinarr.add("625010")
         pinarr.add("625020")
@@ -534,6 +536,9 @@ class OptionSelect_Activity : AppCompatActivity() {
                     val jobj = JSONObject(resp)
                     if (jobj.getString("Status") == "success") {
 
+                        val jobject=jobj.getJSONObject("Response")
+                        zoneid=jobject.getString("assign_user")
+                        utils.savePreferences("zone",zoneid)
                         runOnUiThread {
                             enable_shop.visibility=View.INVISIBLE
                             enable_done.visibility=View.VISIBLE
@@ -542,7 +547,14 @@ class OptionSelect_Activity : AppCompatActivity() {
 
 
                         Handler().postDelayed(Runnable {
-                            startActivity(Intent(applicationContext,HomeActivity::class.java))
+                            if (utils.login()) {
+                                startActivity(Intent(activity, HomeActivity::class.java))
+                                finish()
+                            }
+                            else{
+                                startActivity(Intent(applicationContext,SignActivity::class.java))
+
+                            }
                         },2000)
 
                     } else {

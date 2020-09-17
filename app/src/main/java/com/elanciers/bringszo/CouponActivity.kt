@@ -133,7 +133,7 @@ class CouponActivity : AppCompatActivity(), CouponsAdapter.OnBottomReachedListen
         store_shimmer.startShimmerAnimation()
         Couponslist.clear()
         //Appconstands.loading_show(activity, pDialog).show()
-        val call = ApproveUtils.Get.Coupon("1")
+        val call = ApproveUtils.Get.Coupon("1",utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())
@@ -196,7 +196,7 @@ class CouponActivity : AppCompatActivity(), CouponsAdapter.OnBottomReachedListen
     fun Apply(src:String){
         pDialog = Dialog(activity)
         Appconstands.loading_show(activity,pDialog).show()
-        val call = ApproveUtils.Get.Coupon_check(src)
+        val call = ApproveUtils.Get.Coupon_check(src,utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag responce", response.toString())

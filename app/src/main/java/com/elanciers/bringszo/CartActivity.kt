@@ -340,7 +340,7 @@ class CartActivity : AppCompatActivity() , PaymentStatusListener {
     fun getProducts(pid:String,opid : Int,posi:Int,qty:String){
         println("pid : "+pid)
         profail = false
-        val call = ApproveUtils.Get.Product(pid)
+        val call = ApproveUtils.Get.Product(pid,utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())
@@ -694,7 +694,7 @@ class CartActivity : AppCompatActivity() , PaymentStatusListener {
         println("vendor_id : "+vendor_id)
         deli_add = adr
         val call = ApproveUtils.Get.getDeliverycharge(
-            db.cartTotal.toString())
+            db.cartTotal.toString(),utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())
@@ -751,7 +751,7 @@ class CartActivity : AppCompatActivity() , PaymentStatusListener {
         deli_add = adr
 
         val call = ApproveUtils.Get.getDeliverycharge(
-            db.cartTotal.toString())
+            db.cartTotal.toString(),utils.zoneid())
         call.enqueue(object : Callback<Resp> {
             override fun onResponse(call: Call<Resp>, response: Response<Resp>) {
                 Log.e("$tag response", response.toString())
@@ -1052,6 +1052,7 @@ class CartActivity : AppCompatActivity() , PaymentStatusListener {
                 jobj.put("paymentid", param[0].toString())
                 jobj.put("payment_mode", param[1].toString())//Razorpay
                 jobj.put("payment_status", param[2].toString())
+                jobj.put("zone", utils.zoneid())
 
                 Log.i("payment Input", Appconstands.order + "    " + jobj.toString())
                 result = con.sendHttpPostjson2(Appconstands.order, jobj, "")

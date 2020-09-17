@@ -85,6 +85,11 @@ class Utils(internal var _context: Context) {
         editor.commit()
     }
 
+    fun zoneid():String{
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(_context)
+        return sharedPreferences.getString("zone", "")
+    }
+
     fun setVendor(typeid:String,vendor_id:String,vendor_nm:String,vendor_img:String) {
         val editor = sharedPreferences.edit()
         editor.putString("typeid", typeid)
